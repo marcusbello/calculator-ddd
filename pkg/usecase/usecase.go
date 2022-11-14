@@ -1,7 +1,7 @@
 package usecase
 
 import (
-	"calculator-ddd/domain"
+	"calculator-ddd/pkg/domain"
 	"github.com/gin-gonic/gin"
 	"strconv"
 )

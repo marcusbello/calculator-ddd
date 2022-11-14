@@ -1,7 +1,9 @@
 package http
 
 import (
-	"calculator-ddd/domain"
+	"calculator-ddd/pkg/domain"
+	"calculator-ddd/pkg/utils"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -25,8 +27,12 @@ func (h CalculateHandler) GetCalculation(c *gin.Context) {
 		return
 	}
 	sum, sub, times, div, err := h.calculateUseCase.GetCalculationUc(c, request.First, request.Second)
+	if err != nil {
+		c.JSON(http.StatusForbidden, utils.Response{Error: err})
+		return
+	}
 	c.JSON(http.StatusOK, utils.Response{
-		Data:  delivery.MapCalculateResponse{sum, sub, times, div},
+		Data:  fmt.Sprintf(`{Addition: %v, Subtraction:%v, Multiply: %v, Division:%v}`, sum, sub, times, div),
 		Error: nil,
 	})
 }
@@ -38,7 +44,7 @@ func (h CalculateHandler) GetCalculationHistory(c *gin.Context) {
 		return
 	}
 	c.JSON(http.StatusOK, utils.Response{
-		Data:  delivery.MapCalculateHistoryResponse(res),
+		Data:  fmt.Sprintf("%v", res),
 		Error: nil,
 	})
 }

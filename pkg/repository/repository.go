@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"calculator-ddd/domain"
+	"calculator-ddd/pkg/domain"
 	"encoding/json"
 	"fmt"
 	"github.com/gin-gonic/gin"
