@@ -2,7 +2,7 @@ package postgresql
 
 import (
 	"calculator-ddd/pkg/domain"
-	"calculator-ddd/pkg/utils"
+	"calculator-ddd/utils"
 	"fmt"
 	pgdriver "gorm.io/driver/postgres"
 	"gorm.io/gorm"

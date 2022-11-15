@@ -1,5 +1,5 @@
 # calculator http service
-Calculator service
+## Calculator service
 
 edit config.go in the utils package to edit configurations details
 
@@ -9,9 +9,13 @@ and
 
 go run main.go
 
-visit localhost/calculate?first={a}&second{b}
+Visit: http://localhost:3330/calculate?first={a}&second{b}
+
+or http://localhost:3330/calculate/history -> to get list of recent calculations
 
 where {a} and {b} is any integer
+
+
 
 
 

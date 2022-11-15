@@ -1,7 +1,7 @@
 package redis_cache
 
 import (
-	"calculator-ddd/pkg/utils"
+	"calculator-ddd/utils"
 	"github.com/go-redis/redis/v8"
 )
 

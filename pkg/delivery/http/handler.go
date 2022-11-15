@@ -2,7 +2,7 @@ package http
 
 import (
 	"calculator-ddd/pkg/domain"
-	"calculator-ddd/pkg/utils"
+	"calculator-ddd/utils"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"

@@ -3,10 +3,10 @@ package main
 import (
 	"calculator-ddd/pkg/database/postgresql"
 	"calculator-ddd/pkg/database/redis_cache"
-	"calculator-ddd/pkg/http"
+	"calculator-ddd/pkg/delivery/http"
 	"calculator-ddd/pkg/repository"
 	"calculator-ddd/pkg/usecase"
-	"calculator-ddd/pkg/utils"
+	"calculator-ddd/utils"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"log"
