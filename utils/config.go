@@ -21,7 +21,8 @@ type RedisConfig struct {
 }
 
 func GetConfigs() *config {
-	//add postgres data here, change to env for production
+	// Change to env or viper a json config for production
+	//add postgres data here
 	pgCred := PostgresConfig{
 		Host:     "localhost",
 		User:     "postgres",
@@ -29,7 +30,7 @@ func GetConfigs() *config {
 		Db:       "postgres",
 		Port:     "5432",
 	}
-	//add redis config here, change to env for production
+	//add redis config here
 	redisCred := RedisConfig{
 		Addr:     "localhost:6379",
 		Password: "eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81",
