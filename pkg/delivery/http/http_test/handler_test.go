@@ -16,10 +16,10 @@ func TestCalculateHandler_GetCalculation(t *testing.T) {
 	//err := errors.New("error")
 	t.Run("Get Data", func(t *testing.T) {
 		_, engine := gin.CreateTestContext(httptest.NewRecorder())
-		mockGetCalculationUsecas := domain.NewMockCalculateUseCase(t)
-		mockGetCalculationUsecas.On("GetCalculationUc", mock.Anything, "10", "10").Return(
+		mockGetCalculationUseCase := domain.NewMockCalculateUseCase(t)
+		mockGetCalculationUseCase.On("GetCalculationUc", mock.Anything, "10", "10").Return(
 			10, 10, 10, float64(10), nil)
-		calculatehandler.NewCalculateHandler(engine, mockGetCalculationUsecas)
+		calculatehandler.NewCalculateHandler(engine, mockGetCalculationUseCase)
 		req, err := http.NewRequest(http.MethodGet, "/calculate?first=10&second=10", nil)
 		assert.NoError(t, err)
 		w := httptest.NewRecorder()
