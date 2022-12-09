@@ -34,7 +34,7 @@ const docTemplate = `{
                 "tags": [
                     "calculator"
                 ],
-                "summary": "get calculation",
+                "summary": "Calculate",
                 "parameters": [
                     {
                         "type": "string",
@@ -51,6 +51,26 @@ const docTemplate = `{
                         "required": true
                     }
                 ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Response"
+                        }
+                    }
+                }
+            }
+        },
+        "/calculate/history": {
+            "get": {
+                "description": "get the latest calculations from cache",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "calculator"
+                ],
+                "summary": "Calculation History",
                 "responses": {
                     "200": {
                         "description": "OK",

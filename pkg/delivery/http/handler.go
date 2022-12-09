@@ -39,16 +39,17 @@ func NewCalculateHandler(r *gin.Engine, calculateUc domain.CalculateUseCase) {
 		eg := v1.Group("/")
 		{
 			eg.GET("/calculate", handler.GetCalculation)
+			eg.GET("/calculate/history", handler.GetCalculationHistory)
 		}
 	}
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 
 	//r.GET("/calculate", handler.GetCalculation)
-	r.GET("/calculate/history", handler.GetCalculationHistory)
+	//r.GET("/calculate/history", handler.GetCalculationHistory)
 }
 
 // GetCalculation godoc
-// @Summary get calculation
+// @Summary Calculate
 // @Schemes
 // @Description calculate two integers
 // @Tags        calculator
@@ -75,6 +76,14 @@ func (h CalculateHandler) GetCalculation(c *gin.Context) {
 	})
 }
 
+// GetCalculationHistory godoc
+// @Summary Calculation History
+// @Schemes
+// @Description get the latest calculations from cache
+// @Tags        calculator
+// @Produce     json
+// @Success     200 {object} utils.Response
+// @Router      /calculate/history [get]
 func (h CalculateHandler) GetCalculationHistory(c *gin.Context) {
 	res, err := h.calculateUseCase.GetCalculationHistoryUc(c)
 	if err != nil {

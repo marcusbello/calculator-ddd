@@ -41,7 +41,20 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/Response'
-      summary: get calculation
+      summary: Calculate
+      tags:
+      - calculator
+  /calculate/history:
+    get:
+      description: get the latest calculations from cache
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Response'
+      summary: Calculation History
       tags:
       - calculator
 swagger: "2.0"
