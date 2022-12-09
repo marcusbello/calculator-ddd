@@ -1,6 +1,7 @@
 package utils
 
+// Response example
 type Response struct {
-	Data  string
-	Error error
-}
+	Data  string `json:"data"`
+	Error error  `json:"error,omitempty"`
+} //@name Response

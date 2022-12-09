@@ -1,0 +1,47 @@
+basePath: /api/v1
+definitions:
+  Response:
+    properties:
+      data:
+        type: string
+      error: {}
+    type: object
+host: localhost:3330
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server calculator server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Calculator API
+  version: "1.0"
+paths:
+  /calculate:
+    get:
+      description: calculate two integers
+      parameters:
+      - description: first input
+        in: query
+        name: first
+        required: true
+        type: string
+      - description: second input
+        in: query
+        name: second
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Response'
+      summary: get calculation
+      tags:
+      - calculator
+swagger: "2.0"

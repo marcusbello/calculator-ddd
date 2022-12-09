@@ -5,6 +5,7 @@ import (
 	"gorm.io/gorm"
 )
 
+// CalculateGetRequest example
 type CalculateGetRequest struct {
 	First  string `form:"first" binding:"required"`
 	Second string `form:"second" binding:"required"`
@@ -19,6 +20,7 @@ type CalculationHistory struct {
 	Times         int
 	Divide        float64
 }
+
 type CalculationHistoryResponse struct {
 	ID            uint `json:"ID"`
 	FirstInteger  int  `json:"firstInteger"`
